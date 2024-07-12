@@ -12,14 +12,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    services:
-      mongo:
-        image: mongo:latest
-        ports:
-          - 27017:27017
-
     env:
-      MONGO_URI_TEST: mongodb://localhost:27017/text-analyzer
+      MONGO_URI_TEST: mongodb://mongo:27017/text-analyzer
 
     steps:
       - name: Checkout code
@@ -36,13 +30,13 @@ jobs:
       - name: Run unit tests
         run: npm test
 
+      - name: Build Docker image
+        run: docker-compose -f docker-compose.yml up --build --abort-on-container-exit
+
       - name: Set up .env file for e2e
         run: |
-          echo "NODE_ENV=dev" > .env
-          echo "MONGO_URI_TEST=${{ env.MONGO_URI_TEST }}" >> .env
+          echo "NODE_ENV=dev" > .env.dev
+          echo "MONGO_URI_TEST=${{ env.MONGO_URI_TEST }}" >> .env.dev
 
       - name: Run E2E tests
         run: npm run test:e2e:dev
-
-      - name: Build Docker image
-        run: docker-compose -f docker-compose.yml up --build --abort-on-container-exit
