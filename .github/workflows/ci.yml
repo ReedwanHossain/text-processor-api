@@ -13,7 +13,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      MONGO_URI_TEST: mongodb://mongo:27017/text-processor-test
+      MONGO_URI: ${{ secrets.MONGO_URI}}
+      MONGO_URI_TEST: ${{ secrets.MONGO_URI_TEST }}
 
     steps:
       - name: Checkout code
