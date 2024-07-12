@@ -30,14 +30,14 @@ jobs:
       - name: Run unit tests
         run: npm test
 
-      - name: Build Docker image
-        run: docker-compose -f docker-compose.yml up --build --abort-on-container-exit
-
       - name: Set up .env file for e2e
         run: |
           echo "NODE_ENV=prod" > .env.prod
           echo "MONGO_URI=${{ env.MONGO_URI_TEST }}" >> .env.prod
           echo "MONGO_URI_TEST=${{ env.MONGO_URI_TEST }}" >> .env.prod
+
+      - name: Build Docker image
+        run: docker-compose -f docker-compose.yml up --build --abort-on-container-exit
 
       - name: Run E2E tests
         run: npm run test:e2e
