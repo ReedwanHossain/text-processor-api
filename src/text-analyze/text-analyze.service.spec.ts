@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getModelToken } from '@nestjs/mongoose';
 import { TextAnalyzeService } from './text-analyze.service';
-import { Text } from './text.schema';
+import { Text } from './schemas/text.schema';
 
 describe('TextAnalyzeModule', () => {
   let service: TextAnalyzeService;
@@ -12,7 +12,7 @@ describe('TextAnalyzeModule', () => {
         TextAnalyzeService,
         {
           provide: getModelToken(Text.name),
-          useValue: {}, // Mocked model
+          useValue: {},
         },
       ],
     }).compile();
