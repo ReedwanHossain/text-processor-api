@@ -18,9 +18,6 @@ jobs:
         ports:
           - 27017:27017
 
-    env:
-      MONGO_URI: mongodb://localhost:27017/text-analyzer
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -35,6 +32,11 @@ jobs:
 
       - name: Run unit tests
         run: npm test
+
+      - name: Set up .env file for e2e
+        run: |
+          echo "NODE_ENV=dev" > .env
+          echo "MONGO_URI_TEST=mongodb://mongo:27017/text-processor-test" >> .env
 
       - name: Run E2E tests
         run: npm run test:e2e:dev
