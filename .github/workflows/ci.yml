@@ -37,7 +37,8 @@ jobs:
           echo "MONGO_URI_TEST=${{ env.MONGO_URI_TEST }}" >> .env.prod
 
       - name: Build Docker image
-        run: docker-compose -f docker-compose.yml up --build --abort-on-container-exit
+        run: |
+          docker-compose -f docker-compose.yml up -d
 
       - name: Run E2E tests
         run: npm run test:e2e
