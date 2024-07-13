@@ -7,6 +7,9 @@ services:
     environment:
       - NODE_ENV=${NODE_ENV:-prod}
       - ENV_FILE=.env.${NODE_ENV}
+    volumes:
+      - .:/app
+      - /app/node_modules
     depends_on:
       - mongo
 
@@ -19,3 +22,4 @@ services:
 
 volumes:
   mongo-data:
+  node_modules:
