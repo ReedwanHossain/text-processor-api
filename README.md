@@ -83,6 +83,12 @@ This repository contains the backend API for a Text Processor application. Follo
    docker compose up -d --build
    ```
 
+8. Access the application
+
+   ```bash
+   http://localhost:3001
+   ```
+
 ## License
 
 Nest is [MIT licensed](LICENSE).
