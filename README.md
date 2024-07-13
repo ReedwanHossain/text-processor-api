@@ -44,13 +44,12 @@ This repository contains the backend API for a Text Processor application. Follo
 
 ```
 
-2. Create .env.prod file on any editor and paste
+2. Create .env.prod based on .env.example:
 
 ```bash
+  touch .env.prod
+  cp .env.example .env.prod
 
-  NODE_ENV=dev
-  MONGO_URI=mongodb://mongo:27017/text-processor
-  MONGO_URI_TEST=mongodb://mongo:27017/text-processor-test
 
 ```
 
