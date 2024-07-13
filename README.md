@@ -60,14 +60,36 @@ This repository contains the backend API for a Text Processor application. Follo
    docker compose up -d --build
    ```
 
-4. Run unit tests (Optional):
-   ```bash
-   npm test
-   ```
-5. Run e2e tests (Optional):
-   ```bash
-   npm run test:e2e
-   ```
+---
+
+## Go for step 4-5 if you wish to run tests:
+
+4(a). Access container shell (Optional)
+
+```bash
+docker exec -it text-processor-api-app-1 sh
+```
+
+4(b). Run unit tests (Optional):
+
+```bash
+npm test
+```
+
+5(a). Access container shell (Optional)
+
+```bash
+docker exec -it text-processor-api-app-1 sh
+```
+
+5(b). Run e2e tests (Optional):
+
+```bash
+npm run test:e2e
+```
+
+---
+
 6. Open another terminal tab or window. Clone the frontend repository::
 
    ```bash
@@ -87,6 +109,12 @@ This repository contains the backend API for a Text Processor application. Follo
 
    ```bash
    http://localhost:3001
+   ```
+
+9. Access the API Docs
+
+   ```bash
+   http://localhost:3000/docs
    ```
 
 ## License
