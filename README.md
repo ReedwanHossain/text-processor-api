@@ -72,7 +72,7 @@ This repository contains the backend API for a Text Processor application. Follo
 
    ```bash
 
-   git clone https://github.com/Reedwan/text-processor-client.git
+   git clone https://github.com/ReedwanHossain/text-processor-client.git
    cd text-processor-client
 
    ```
