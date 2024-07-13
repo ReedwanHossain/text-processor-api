@@ -24,50 +24,69 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+# Text Processor Application
 
-## Installation
+This repository contains the backend API for a Text Processor application. Follow the instructions below to set up and run the application locally using Docker.
 
-```bash
-$ npm install
-```
+## Prerequisites
 
-## Running the app
+- Docker version 24.0.7
+- Docker Compose version 2.27.1
 
-```bash
-# development
-$ npm run start
+### Backend Setup (text-processor-api)
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
+1. Clone the backend repository:
 
 ```bash
-# unit tests
-$ npm run test
 
-# e2e tests
-$ npm run test:e2e
+  git clone https://github.com/ReedwanHossain/text-processor-api.git
+  cd text-processor-api
 
-# test coverage
-$ npm run test:cov
 ```
 
-## Support
+2. Create .env.prod file and paste
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
 
-## Stay in touch
+  NODE_ENV=dev
+  MONGO_URI=mongodb://mongo:27017/text-processor
+  MONGO_URI_TEST=mongodb://localhost:27017/text-processor-test
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+```
+
+3. Run Docker Compose to build and start the backend services:
+
+   ```bash
+   docker compose up -d --build
+   ```
+
+4. Run unit tests (Optional):
+   ```bash
+   npm test
+   ```
+5. Run e2e tests (Optional):
+   ```bash
+   npm run test:e2e
+   ```
+6. Open another terminal tab or window. Clone the frontend repository::
+
+   ```bash
+
+   git clone https://github.com/Reedwan/text-processor-client.git
+   cd text-processor-client
+
+   ```
+
+7. Run Docker Compose to build and start the frontend app:
+
+   ```bash
+   docker compose up -d --build
+   ```
 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+```
+
+```
