@@ -33,6 +33,20 @@ export class TextAnalyzeController {
     return await this.textService.findAll();
   }
 
+  @Get('msg')
+  @ApiOperation({ summary: 'Get msg' })
+  @ApiResponse({ status: 200, description: 'Return msg.' })
+  async getMsg() {
+    return 'Hello Text Processing API!';
+  }
+
+  @Get('newMsg')
+  @ApiOperation({ summary: 'Get msg' })
+  @ApiResponse({ status: 200, description: 'Return NewMsg.' })
+  async getNewMsg() {
+    return 'We only push image to docker Hub!';
+  }
+
   @Get(':id')
   @ApiOperation({ summary: 'Get a paragraph by ID' })
   @ApiParam({ name: 'id', required: true, description: 'Paragraph ID' })
