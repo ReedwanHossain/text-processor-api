@@ -3,7 +3,7 @@ services:
     build: .
     image: rhossain16/text-processor-api:latest
     environment:
-      - NODE_ENV=${NODE_ENVV}
+      - NODE_ENV=${NODE_ENV}
       - ENV_FILE=.env.${NODE_ENV}
     depends_on:
       - mongo
