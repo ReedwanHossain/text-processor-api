@@ -44,7 +44,7 @@ export class TextAnalyzeController {
   @ApiOperation({ summary: 'Get msg' })
   @ApiResponse({ status: 200, description: 'Return NewMsg.' })
   async getNewMsg() {
-    return 'We only push image to docker Hub!';
+    return 'DOCKER HUB!';
   }
 
   @Get(':id')

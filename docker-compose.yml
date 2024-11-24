@@ -2,9 +2,12 @@ services:
   app:
     build: .
     image: rhossain16/text-processor-api:latest
+    ports:
+      - '3000:3000'
     environment:
       - NODE_ENV=${NODE_ENV}
-      - ENV_FILE=.env.${NODE_ENV}
+      - MONGO_URI=${MONGO_URI}
+
     depends_on:
       - mongo
 
